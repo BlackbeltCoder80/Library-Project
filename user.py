@@ -5,13 +5,15 @@ class User:
         self.borrowed_books = []
 
     def borrow_book(self, book):
+        """Allows the user to borrow a book if it's available."""
         if not book.is_borrowed:
-            book.borrow_book()
+            book.borrow_book(self.name)  # Pass borrower's name
             self.borrowed_books.append(book.title)
             return f'{self.name} borrowed "{book.title}".'
-        return f'"{book.title}" is not available.'
+        return f'Sorry, "{book.title}" is already borrowed by {book.borrowed_by}.'
 
     def return_book(self, book):
+        """Allows the user to return a book they borrowed."""
         if book.title in self.borrowed_books:
             book.return_book()
             self.borrowed_books.remove(book.title)

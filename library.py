@@ -50,3 +50,20 @@ class Library:
         headers = ["Name", "Biography"]
         table = [[author.name, author.biography] for author in self.authors]
         return tabulate(table, headers, tablefmt="fancy_grid")
+    
+    def find_user(self, name):
+        """Finds User by Name"""
+        for user in self.users:
+            if user.name.lower() == name.lower():
+                return user
+        return None
+    def borrow_book(self, title, borrower_name):
+        """Allows a registered user to borrow a book"""
+        book = self.find_book(title)
+        user = self.find_user(borrower_name)
+        if not user:
+            return f"Error: '{borrower_name}' is not a registered user. Please add user first"
+        if book:
+            return user.borrow_book(book) #borrow book from user class
+        return "Book not found"
+        

@@ -1,7 +1,9 @@
 from library import Library
+from book_data_handler import save_data, load_data
 
 def main():
     library = Library()
+    load_data(library)  # Load existing data
 
     # Adding sample data (Wheel of Time & Mistborn Series)
     library.add_author("Robert Jordan", "Author of Wheel of Time")
@@ -36,22 +38,16 @@ def main():
 
             elif sub_choice == "4":  # Borrow a book
                 title = input("Enter book title to borrow: ")
-                book = library.find_book(title)
-                if book:
-                    print(book.borrow_book())
-                else:
-                    print("Book not found.")
+                borrower_name = input("Enter your name: ")
+                print(library.borrow_book(title, borrower_name))
 
             elif sub_choice == "5":  # Return a book
                 title = input("Enter book title to return: ")
-                book = library.find_book(title)
-                if book:
-                    print(book.return_book())
-                else:
-                    print("Book not found.")
+                borrower_name = input("Enter your name: ")
+                print(library.return_book(title, borrower_name))
 
         elif choice == "2":
-            print("\n1. Add a new user\n2. Display all users")
+            print("\n1. Add a new user\n2. View user details\n3. Display all users")
             sub_choice = input("Enter your choice: ")
 
             if sub_choice == "1":
@@ -59,6 +55,10 @@ def main():
                 user_id = input("Enter user ID: ")
                 print(library.add_user(name, user_id))
             elif sub_choice == "2":
+                name = input("Enter user name to view details: ")
+                user = library.find_user(name)
+                print(user if user else "User not found.")
+            elif sub_choice == "3":
                 print("\nRegistered Users:")
                 print(library.display_users())
 
@@ -71,6 +71,7 @@ def main():
                 print(library.display_authors())
 
         elif choice == "4":
+            save_data(library)  # Save data before exiting
             print("Goodbye!")
             break
         else:
