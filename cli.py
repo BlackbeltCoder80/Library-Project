@@ -75,8 +75,8 @@ def main():
             save_data(library)
             print("Data saved. Exiting program.")
             print("Goodbye!")
-        break
+        
     
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+    #main()

@@ -23,3 +23,8 @@ class User:
     def __str__(self):
         borrowed = ", ".join(self.borrowed_books) if self.borrowed_books else "No books borrowed"
         return f'User: {self.name} | ID: {self.user_id} | Borrowed Books: {borrowed}'
+  
+
+
+
+

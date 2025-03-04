@@ -17,6 +17,33 @@
             "is_borrowed": false,
             "borrowed_by": null,
             "borrowed_date": null
+        },
+        {
+            "title": "Family Wealth",
+            "author": "James E Hudges Jr.",
+            "genre": "Finance/Family",
+            "publication_date": "1997",
+            "is_borrowed": false,
+            "borrowed_by": null,
+            "borrowed_date": null
+        },
+        {
+            "title": "The Eye of the World",
+            "author": "Robert Jordan",
+            "genre": "Fantasy",
+            "publication_date": "1990",
+            "is_borrowed": false,
+            "borrowed_by": null,
+            "borrowed_date": null
+        },
+        {
+            "title": "The Final Empire",
+            "author": "Brandon Sanderson",
+            "genre": "Fantasy",
+            "publication_date": "2006",
+            "is_borrowed": false,
+            "borrowed_by": null,
+            "borrowed_date": null
         }
     ],
     "users": [],
