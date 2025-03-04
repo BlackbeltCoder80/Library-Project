@@ -11,7 +11,7 @@ class Library:
 
     def add_book(self, title, author, genre, publication_date):
         book = Book(title, author, genre, publication_date)
-        self.books.append(book)
+        self.books.append(book) #  Prints when book is added # (if you can fix this please help, Ive tried several times...:(
         return f'Book "{title}" added successfully.'
 
     def add_user(self, name, user_id):

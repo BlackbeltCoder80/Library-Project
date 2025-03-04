@@ -71,11 +71,12 @@ def main():
                 print(library.display_authors())
 
         elif choice == "4":
-            save_data(library)  # Save data before exiting
+            print("Saving data before quitting...")
+            save_data(library)
+            print("Data saved. Exiting program.")
             print("Goodbye!")
-            break
-        else:
-            print("Invalid choice. Please try again.")
+        break
+    
 
 if __name__ == "__main__":
     main()

@@ -16,7 +16,7 @@ def save_data(library):
                 "publication_date": book.publication_date,
                 "is_borrowed": book.is_borrowed,
                 "borrowed_by": book.borrowed_by if book.borrowed_by else None,
-                "borrowed_date": book.borrowed_date.strftime("%Y-%m-%d %H:%M:%S") if book.borrowed_date else None
+                "borrowed_date": book.borrowed_date.strftime("%Y-%m-%d %H:%M:%S") if book.is_borrowed_date else None
             }
             for book in library.books
         ],
@@ -33,6 +33,7 @@ def save_data(library):
     with open("library_data.json", "w") as file:
         json.dump(data, file, indent=4)
     print(" Data saved successfully!")  # success message
+    print(f"Books being saved: {len(library.books)}") 
 
 def load_data(library):
     """Loads the library data from a file."""

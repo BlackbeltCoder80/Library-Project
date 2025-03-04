@@ -1,5 +1,33 @@
 {
-    "books": [],
+    "books": [
+        {
+            "title": "The Eye of the World",
+            "author": "Robert Jordan",
+            "genre": "Fantasy",
+            "publication_date": "1990",
+            "is_borrowed": false,
+            "borrowed_by": null,
+            "borrowed_date": null
+        },
+        {
+            "title": "The Final Empire",
+            "author": "Brandon Sanderson",
+            "genre": "Fantasy",
+            "publication_date": "2006",
+            "is_borrowed": false,
+            "borrowed_by": null,
+            "borrowed_date": null
+        }
+    ],
     "users": [],
-    "authors": []
+    "authors": [
+        {
+            "name": "Robert Jordan",
+            "biography": "Author of Wheel of Time"
+        },
+        {
+            "name": "Brandon Sanderson",
+            "biography": "Finished WoT, Mistborn series author"
+        }
+    ]
 }
